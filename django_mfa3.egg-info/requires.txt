@@ -1,0 +1,4 @@
+pyotp
+fido2
+qrcode
+django>=2.2
