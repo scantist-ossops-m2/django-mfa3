@@ -1,3 +1,24 @@
+Metadata-Version: 2.1
+Name: django-mfa3
+Version: 0.2.1+patched
+Summary: multi factor authentication for django
+Home-page: https://github.com/xi/django-mfa3
+Author: Tobias Bengfort
+Author-email: tobias.bengfort@posteo.de
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 3.2
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 # django-mfa3
 
 An opinionated Django app that handles multi factor authentication (MFA) via
@@ -21,10 +42,7 @@ pip install django-mfa3
 ## Usage
 
 1.  Add `'mfa'` to `INSTALLED_APPS`
-2.  Use `mfa.views.LoginView` instead of the regular login view. (Be sure to
-    remove any other login routes, otherwise the multi factor authentication
-    can be circumvented. The admin login will automatically be patched to
-    redirect to the regular login.)
+2.  Use `mfa.views.LoginView` instead of the regular login view
 3.  Set `MFA_DOMAIN = 'example.com'` and `MFA_SITE_TITLE = 'My site'`
 4.  Register URLs: `path('mfa/', include('mfa.urls', namespace='mfa')`
 5.  The included templates are just examples, so you should [replace them](https://docs.djangoproject.com/en/stable/howto/overriding-templates/) with your own.
@@ -79,3 +97,5 @@ response. The server keeps some state in the session across these requests. For
 example, the user is temporarily stored in the session until the second factor
 authentication is done. The logic for handling this state is not as straight
 forward as I would like and there might be issues hidden in there.
+
+
